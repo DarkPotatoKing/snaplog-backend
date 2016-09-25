@@ -11,15 +11,16 @@
 
  -->
 
-<form action="action_page.php" method="post">
+<form action="{% url 'logbook:login' %}" method="post">
+  {% csrf_token %}
   First name:<br>
-  <input type="text" name="firstname" value="Kyle">
+  <input type="text" name="first_name" value="Kyle">
   <br>
   Last name:<br>
-  <input type="text" name="lastname" value="Rosales">
+  <input type="text" name="last_name" value="Rosales">
   <br>
   Student number:<br>
-  <input type="text" name="lastname" value="201406463">
+  <input type="text" name="student_number" value="201406463">
   <br>
   <input type="submit" value="Login">
 </form>

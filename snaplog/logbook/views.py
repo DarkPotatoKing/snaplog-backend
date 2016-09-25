@@ -11,4 +11,8 @@ def index(request):
     return render(request, 'logbook/index.html', context)
 
 def login(request):
-    return HttpResponse('Login response')
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    student_number = request.POST['student_number']
+    r = '{} {} ({})'.format(first_name, last_name, student_number)
+    return HttpResponse(r)

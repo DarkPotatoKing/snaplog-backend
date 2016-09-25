@@ -7,3 +7,6 @@ class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     student_number = models.PositiveIntegerField(default=0)
+
+    def __repr__(self):
+        return '{} {} ({})'.format(self.first_name, self.last_name, str(self.student_number))
